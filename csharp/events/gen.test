@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <PackageReference Include="ClearBank.Dapper" Version="5.2.28" />
+  </PropertyGroup>
+
+</Project>
