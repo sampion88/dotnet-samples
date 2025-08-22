@@ -3,6 +3,23 @@ using System.Globalization;
 
 public class DateTimeParse2
 {
+    
+    [HttpGet("AikidoTest")]
+    public IActionResult ThisIsASuperVulnerableMethod([FromQuery] string fileName, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            {
+                return File(fileStream, "application/octet-stream");
+            }
+        }
+        catch (Exception ex)
+        {
+            return ex.HandleApiException(_logger, "Failed to perform Aikido test");
+        }
+    }
+    
     public static void ParseWithTwoArgs()
     {
         // Assume the current culture is en-US. 
